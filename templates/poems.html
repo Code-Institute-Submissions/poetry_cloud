@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poetry Cloud</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     {% for poem in poems %}
         {{ poem.poem_title }}<br>
         {{ poem.type_name }}<br>
@@ -13,5 +8,5 @@
         {{ poem.poem_date }}<br>
         {{ poem.poem_text }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}    
