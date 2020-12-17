@@ -27,6 +27,7 @@ def get_poems():
     poems = mongo.db.poems.find()
     return render_template("poems.html", poems=poems)
 
+
 # Register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
