@@ -17,9 +17,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-# Here, the @app.route decorator is used to bind the URL to the get_poems
-# function.
-# As a result, when the user visits the URL, the output of the function will
+# the @app.route decorator is used to bind the URL to the get_poems function.
+# as a result, when the user visits the URL, the output of the function will
 # render in the browser.
 @app.route("/")
 @app.route("/get_poems")
@@ -53,7 +52,36 @@ def register():
     return render_template("register.html")
 
 
-# How and where to run the application.
+# Login function
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # if request method equals POST, check if username is found in the db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # then check if the hashed password matches the one the user submitted
+            # if true, then we can log the user in and display a welcome message
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(request.form.get("username")))
+            else:
+                # if the password doesn't match, flash message and redirect to login
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            # if there wasn't a match for the existing_user variable,
+            # display message and redirect to login and try again
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
+
+
+# how and where to run the application.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

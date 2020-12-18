@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Register</h3>
-
+    <h3 class="center-align">Log In</h3>
+    <!-- username -->
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel">
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="far fa-user prefix red-text text-darken-1"></i>
+                        <i class="fas fa-user prefix red-text text-darken-1"></i>
                         <input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
                     </div>
                 </div>
+                 <!-- password  -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-lock prefix red-text text-darken-1"></i>
@@ -22,8 +23,9 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
+                 <!-- login -->
                 <div class="row center-align">
-                    <button class="btn waves-effect red darken-1" type="submit" name="action">Register
+                    <button class="btn waves-effect red darken-1" type="submit" name="action">Login
                         <i class="fas fa-arrow-alt-circle-right"></i>
                     </button>
                 </div>
@@ -34,8 +36,8 @@
     <div class="row">
         <div class="col s12">
             <p class="center-align">
-                Already Registered?
-                <a href="{{ url_for('login') }}" class="red-text text-darken-1">Log In</a>
+                New to Poetry Cloud?
+                <a href="{{ url_for('register') }}" class="red-text text-darken-1">Register Account</a>
             </p>
         </div>
     </div>
