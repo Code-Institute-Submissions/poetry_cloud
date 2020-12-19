@@ -106,6 +106,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_poem")
+def add_poem():
+    return render_template("add_poem.html")    
+
+
 # how and where to run the application.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
