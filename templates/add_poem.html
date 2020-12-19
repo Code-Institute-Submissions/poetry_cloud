@@ -7,6 +7,18 @@
     <form class="col s12" method="POST" action="">
         <div class="row">
             <div class="input-field col s12">
+                <i class="fas fa-check-circle prefix red-text text-darken-1"></i>
+                    <select id="type_name" name="type_name" class="validate" required>
+                        <option value="" disabled selected>Choose a type of poem</option>
+                        {% for type in types %}
+                            <option value="{{ type.type_name }}">{{ type.type_name }}</option>
+                        {% endfor %}
+                    </select>
+                <label for="type_name">Type of Poem</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
                 <i class="fas fa-pen-square prefix red-text text-darken-1"></i>
                 <input id="poem_title" name="poem_title" minlength="5"
                     maxlength="50" type="text" class="validate" required>

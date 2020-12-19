@@ -105,10 +105,11 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+# Add Poem function
 @app.route("/add_poem")
 def add_poem():
-    return render_template("add_poem.html")    
+    types = mongo.db.types.find().sort("type_name", 1)
+    return render_template("add_poem.html", types=types)
 
 
 # how and where to run the application.
