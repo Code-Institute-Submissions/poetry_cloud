@@ -1,12 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for poem in poems %}
-        {{ poem.poem_title }}<br>
-        {{ poem.type_name }}<br>
-        {{ poem.poem_author }}<br>
-        {{ poem.poem_date }}<br>
-        {{ poem.poem_text }}<br>
-    {% endfor %}
+      <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <h4 class="center-align red-text text-darken-1"> 
+                    Poetry Cloud Community Poems
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <ul class="collapsible popout">
+        {% for poem in poems %}
+        <li>
+            <div class="collapsible-header">
+            <i class="far fa-arrow-alt-circle-down red-text text-darken-1"></i>
+            <strong>{{ poem.poem_title }}</strong> : By {{ poem.poem_author }}
+            </div>
+            <div class="collapsible-body">
+                <strong>{{ poem.type_name }}</strong>
+                <p>{{ poem.poem_text }}</p>
+            </div>
+        </li>
+        {% endfor %}
+  </ul>
+        
 
 {% endblock %}    
