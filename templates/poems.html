@@ -15,14 +15,21 @@
         {% for poem in poems %}
         <li>
             <div class="collapsible-header">
-            <i class="far fa-arrow-alt-circle-down red-text text-darken-1"></i>
-            <strong>{{ poem.poem_title }}</strong> : By {{ poem.poem_author }}
-            </div>
+                <div class="col s3">   
+                    <i class="far fa-arrow-alt-circle-down red-text text-darken-1"></i>
+                    <a href="" class="waves-effect waves-light btn-small red darken-1">Delete</a>
+                    <a href="" class="waves-effect waves-light btn-small red darken-1">Edit</a>
+                </div> 
+                <div class="col s9">  
+                <strong>{{ poem.poem_title }}</strong> : By {{ poem.poem_author }}
+                </div>
+            </div> 
             <div class="collapsible-body">
                 <strong>{{ poem.type_name }}</strong>
                 <p>{{ poem.poem_text }}</p>
                 <p>Poem submitted by: {{ poem.created_by }}</p>
             </div>
+            
         </li>
         {% endfor %}
   </ul>

@@ -15,3 +15,12 @@ nav ul a {
   main {
     flex: 1 0 auto;
   }
+
+  .btn-small {
+      margin: 5px;
+  }
+
+  .collapsible-header .col strong {
+      margin: 5px;
+      line-height: 40px;
+  }
