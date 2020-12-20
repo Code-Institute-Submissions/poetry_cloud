@@ -3,13 +3,14 @@
 
     <h4 class="center-align">Add Poem</h4>
 
-<div class="row">
-    <form class="col s12" method="POST" action="">
+<div class="row card-panel white">
+    <form class="col s12" method="POST" action="{{ url_for('add_poem') }}">
+        <!-- select poem type dropdown -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-check-circle prefix red-text text-darken-1"></i>
                     <select id="type_name" name="type_name" class="validate" required>
-                        <option value="" disabled selected>Choose a type of poem</option>
+                        <option value="" disabled selected>Choose the poem type</option>
                         {% for type in types %}
                             <option value="{{ type.type_name }}">{{ type.type_name }}</option>
                         {% endfor %}
@@ -17,6 +18,7 @@
                 <label for="type_name">Type of Poem</label>
             </div>
         </div>
+        <!-- poem title input -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pen-square prefix red-text text-darken-1"></i>
@@ -25,6 +27,7 @@
                 <label for="poem_title">Title</label>
             </div>
         </div>
+        <!-- author's name input -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-file-signature prefix red-text text-darken-1"></i>
@@ -33,13 +36,19 @@
                 <label for="poem_author">Name of Author</label>
             </div>
         </div>
-
+        <!-- poem text input -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix red-text text-darken-1"></i>
                 <textarea id="poem_text" name="poem_text" minlength="10" class="materialize-textarea validate" required></textarea>
                 <label for="poem_text">Poem (Text)</label>
             </div>
+        </div>
+        <!-- submit button -->
+        <div class="row center-align">
+            <button class="btn waves-effect red darken-1" type="submit">Add Poem
+             <i class="fas fa-plus-circle right"></i>
+            </button>
         </div>
     </form>
 </div>    

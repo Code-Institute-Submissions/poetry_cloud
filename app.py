@@ -106,8 +106,20 @@ def logout():
     return redirect(url_for("login"))
 
 # Add Poem function
-@app.route("/add_poem")
+@app.route("/add_poem", methods=["GET", "POST"])
 def add_poem():
+    if request.method == "POST":
+        poem = {
+            "type_name": request.form.get("type_name"),
+            "poem_title": request.form.get("poem_title"),
+            "poem_author": request.form.get("poem_author"),
+            "poem_text": request.form.get("poem_text"),
+            "created_by": session["user"]
+        }
+        mongo.db.poems.insert_one(poem)
+        flash("Poem Successfully Added")
+        return redirect(url_for("get_poems"))
+
     types = mongo.db.types.find().sort("type_name", 1)
     return render_template("add_poem.html", types=types)
 
