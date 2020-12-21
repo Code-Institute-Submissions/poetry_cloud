@@ -124,6 +124,13 @@ def add_poem():
     return render_template("add_poem.html", types=types)
 
 
+@app.route("/edit_poem/<poem_id>", methods=["GET", "POST"])
+def edit_poem(poem_id):
+    poem = mongo.db.poems.find_one({"_id": ObjectId(poem_id)})
+    types = mongo.db.types.find().sort("type_name", 1)
+    return render_template("edit_poem.html", poem=poem, types=types)
+
+
 # how and where to run the application.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
