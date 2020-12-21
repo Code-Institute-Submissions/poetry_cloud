@@ -10,9 +10,13 @@
             <div class="input-field col s12">
                 <i class="fas fa-check-circle prefix red-text text-darken-1"></i>
                     <select id="type_name" name="type_name" class="validate" required>
-                        <option value="" disabled selected>Choose the poem type</option>
+                        <option value="" disabled>Choose the poem type</option>
                         {% for type in types %}
-                            <option value="{{ type.type_name }}">{{ type.type_name }}</option>
+                            {% if type.type_name == poem.type_name %}
+                                <option value="{{ type.type_name }}" selected>{{ type.type_name }}</option>
+                            {% else %}
+                                <option value="{{ type.type_name }}">{{ type.type_name }}</option>
+                            {% endif %}    
                         {% endfor %}
                     </select>
                 <label for="type_name">Type of Poem</label>
@@ -23,7 +27,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-pen-square prefix red-text text-darken-1"></i>
                 <input id="poem_title" name="poem_title" minlength="5"
-                    maxlength="50" type="text" class="validate" required>
+                    maxlength="50" value="{{ poem.poem_title }}" type="text" class="validate" required>
                 <label for="poem_title">Title</label>
             </div>
         </div>
@@ -32,7 +36,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-file-signature prefix red-text text-darken-1"></i>
                 <input id="poem_author" name="poem_author" minlength="5"
-                    maxlength="50" type="text" class="validate" required>
+                    maxlength="50" value="{{ poem.poem_author }}" type="text" class="validate" required>
                 <label for="poem_author">Name of Author</label>
             </div>
         </div>
@@ -40,12 +44,18 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix red-text text-darken-1"></i>
-                <textarea id="poem_text" name="poem_text" minlength="10" class="materialize-textarea validate" required></textarea>
+                <textarea id="poem_text" name="poem_text" minlength="10"
+                class="materialize-textarea validate" required>
+                {{- poem.poem_text }}
+                </textarea>
                 <label for="poem_text">Poem (Text)</label>
             </div>
         </div>
-        <!-- submit button -->
+        <!-- submit/cancel buttons -->
         <div class="row center-align">
+            <a href="{{ url_for('get_poems') }}" class="btn waves-effect red darken-1">
+                Cancel <i class="fas fa-window-close"></i>
+            </a>
             <button class="btn waves-effect red darken-1" type="submit">Edit Poem
              <i class="far fa-edit right"></i>
             </button>
