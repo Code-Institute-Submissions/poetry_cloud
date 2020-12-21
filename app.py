@@ -123,9 +123,23 @@ def add_poem():
     types = mongo.db.types.find().sort("type_name", 1)
     return render_template("add_poem.html", types=types)
 
-
+# Edit poem function
+# search for the poem in the db with the poem id 
+# then update that poem with data from submit dictionary and display a message
+# return user to edit page
 @app.route("/edit_poem/<poem_id>", methods=["GET", "POST"])
 def edit_poem(poem_id):
+    if request.method == "POST":
+        submit = {
+            "type_name": request.form.get("type_name"),
+            "poem_title": request.form.get("poem_title"),
+            "poem_author": request.form.get("poem_author"),
+            "poem_text": request.form.get("poem_text"),
+            "created_by": session["user"]
+        }
+        mongo.db.poems.update({"_id": ObjectId(poem_id)}, submit)
+        flash("Poem Successfully Updated")
+
     poem = mongo.db.poems.find_one({"_id": ObjectId(poem_id)})
     types = mongo.db.types.find().sort("type_name", 1)
     return render_template("edit_poem.html", poem=poem, types=types)
