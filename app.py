@@ -144,6 +144,13 @@ def edit_poem(poem_id):
     types = mongo.db.types.find().sort("type_name", 1)
     return render_template("edit_poem.html", poem=poem, types=types)
 
+# Delete poem function
+@app.route("/delete_poem/<poem_id>")
+def delete_poem(poem_id):
+    mongo.db.poems.remove({"_id": ObjectId(poem_id)})
+    flash("Poem Successfully Deleted")
+    return redirect(url_for("get_poems"))
+
 
 # how and where to run the application.
 if __name__ == "__main__":
