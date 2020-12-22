@@ -179,6 +179,25 @@ def add_type():
     return render_template("add_type.html")
 
 
+# Edit type function
+# If the request method equals 'POST' we submit the edited type from the form
+# Then we use the update method on the types collection
+# Once updated we redirect the admin back to get_types view
+@app.route("/edit_type/<type_id>", methods=["GET", "POST"])
+def edit_type(type_id):
+    if request.method == "POST":
+        submit = {
+            "type_name": request.form.get("type_name")
+        }
+        mongo.db.types.update({"_id": ObjectId(type_id)}, submit)
+        flash("Poem Type Successfully Updated")
+        return redirect(url_for("get_types"))
+
+    type = mongo.db.types.find_one({"_id": ObjectId(type_id)})
+    return render_template("edit_type.html", type=type)
+
+
+
 # how and where to run the application.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
