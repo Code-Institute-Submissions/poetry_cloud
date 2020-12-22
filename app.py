@@ -124,9 +124,9 @@ def add_poem():
     return render_template("add_poem.html", types=types)
 
 # Edit poem function
-# search for the poem in the db with the poem id 
-# then update that poem with data from submit dictionary and display a message
-# return user to edit page
+# Search for the poem in the db with the poem id
+# then update that poem with data from submit dictionary
+# and display a message return user to edit page
 @app.route("/edit_poem/<poem_id>", methods=["GET", "POST"])
 def edit_poem(poem_id):
     if request.method == "POST":
@@ -145,8 +145,8 @@ def edit_poem(poem_id):
     return render_template("edit_poem.html", poem=poem, types=types)
 
 # Delete poem function
-# search for the poem in the db with the poem id 
-# then remove from db, flash message to user
+# Search for the poem in the db with the poem id
+# then remove from db, flash message to user,
 # return user to home page
 @app.route("/delete_poem/<poem_id>")
 def delete_poem(poem_id):
@@ -154,11 +154,29 @@ def delete_poem(poem_id):
     flash("Poem Successfully Deleted")
     return redirect(url_for("get_poems"))
 
-# gets types from the db, converts to a list and returns to our types template
+
+# Get types function
+# Gets types from the db, converts to a list and returns to our types template
 @app.route("/get_types")
 def get_types():
     types = list(mongo.db.types.find().sort("type_name", 1))
-    return render_template("types.html", types=types)    
+    return render_template("types.html", types=types)
+
+# Add type function
+# If the add_type function is called using the 'POST' method 
+# then we'll get the data from the form and insert into db
+# Otherwise, default 'GET' method will render the empty 'Add Type' form
+@app.route("/add_type", methods=["GET", "POST"])
+def add_type():
+    if request.method == "POST":
+        type = {
+            "type_name": request.form.get("type_name")
+        }
+        mongo.db.types.insert_one(type)
+        flash("New Poem Type Added")
+        return redirect(url_for("get_types"))
+
+    return render_template("add_type.html")
 
 
 # how and where to run the application.
