@@ -63,7 +63,7 @@ def login():
 
         if existing_user:
             # then check if the hashed password matches the one the user submitted
-            # if true, then we can log the user in and display a welcome message
+            # if true, log the user in and display a welcome message
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
@@ -156,15 +156,15 @@ def delete_poem(poem_id):
 
 
 # Get types function
-# Gets types from the db, converts to a list and returns to our types template
+# Gets types from the db, converts to a list and returns to types template
 @app.route("/get_types")
 def get_types():
     types = list(mongo.db.types.find().sort("type_name", 1))
     return render_template("types.html", types=types)
 
 # Add type function
-# If the add_type function is called using the 'POST' method 
-# then we'll get the data from the form and insert into db
+# If add_type function is called using the 'POST' method
+# then get the data from the form and insert into db
 # Otherwise, default 'GET' method will render the empty 'Add Type' form
 @app.route("/add_type", methods=["GET", "POST"])
 def add_type():
@@ -180,9 +180,9 @@ def add_type():
 
 
 # Edit type function
-# If the request method equals 'POST' we submit the edited type from the form
-# Then we use the update method on the types collection
-# Once updated we redirect the admin back to get_types view
+# If the request method equals 'POST', submit the edited type from the form
+# Then use the update method on the types collection
+# Once updated, redirect the admin back to get_types view
 @app.route("/edit_type/<type_id>", methods=["GET", "POST"])
 def edit_type(type_id):
     if request.method == "POST":
@@ -196,6 +196,16 @@ def edit_type(type_id):
     type = mongo.db.types.find_one({"_id": ObjectId(type_id)})
     return render_template("edit_type.html", type=type)
 
+
+# Delete type function
+# Use the remove method on the types collection in MongoDB to delete type
+# Once deleted, display flash message to admin user
+# Redirect admin user back to all available types
+@app.route("/delete_type/<type_id>")
+def delete_type(type_id):
+    mongo.db.types.remove({"_id": ObjectId(type_id)})
+    flash("Poem Type Successfully Deleted")
+    return redirect(url_for("get_types"))
 
 
 # how and where to run the application.
