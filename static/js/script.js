@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('select').formSelect();
     $(".dropdown-content.select-dropdown > li span").css("color", "black");
- 
+   
 
 // Form validation for select dropdown. Source code copied from Code Institute Mini Project.
 // https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/04-AddingATask-WritingToTheDatabase/02-materialize-select-validation/static/js/script.js  

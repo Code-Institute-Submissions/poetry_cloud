@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 body {
+    font-family: 'Playfair Display', serif;
+    justify-content: center;
+    font-weight: 400;
     background-color: #e0e0e0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 nav ul a {
     color: black;
 }
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
 
 main {
     flex: 1 0 auto;

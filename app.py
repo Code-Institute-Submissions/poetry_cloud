@@ -88,13 +88,19 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # retrieve the username from db which belongs to the session user
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
     # if session user is true then render appropriate profile or redirect to login
-    if session["user"]:
-        return render_template("profile.html", username=username)
+    # if session["user"]:
+    #     username = mongo.db.users.find_one(
+    #         {"username": session["user"]})["username"]
+    #     return render_template("profile.html", username=username)
 
-    return redirect(url_for("login"))
+    try:
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        poems = mongo.db.poems.find({"created_by": session["user"]})
+        return render_template("profile.html", username=username, poems=poems)
+    except KeyError:
+        return redirect(url_for("login"))
 
 
 # Logout function
