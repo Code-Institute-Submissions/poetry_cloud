@@ -30,3 +30,8 @@ main {
 .card-panel.home {
     padding: 8px;
 }
+
+/* ------ Social icons ---- */
+i.fab {
+    padding: 10px;
+}
