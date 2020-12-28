@@ -54,3 +54,7 @@ ul.feature-list {
 #poems {
     background-color: #212121;
 }
+
+div.footer-copyright.red.darken-4 {
+    padding: 3px;
+}
