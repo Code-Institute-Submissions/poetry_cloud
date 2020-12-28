@@ -4,7 +4,7 @@ body {
     font-family: 'Playfair Display', serif;
     justify-content: center;
     font-weight: 400;
-    background-color: #e0e0e0;
+    background-color: #eeeeee;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -35,7 +35,13 @@ main {
 i.fab {
     padding: 10px;
 }
+/* ------ Home page ---- */
 
 div.container.features {
     margin-top: 50px;
+}
+
+ul.feature-list {
+    line-height: 2.3;
+    font-size: 20px;
 }
