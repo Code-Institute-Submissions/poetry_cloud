@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&family=Open+Sans&display=swap');
 
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Open Sans', sans-serif;
     justify-content: center;
     font-weight: 400;
     display: flex;
@@ -26,6 +26,7 @@ main {
  
 .nav-wrapper .brand-logo {
     font-size: 20px;
+    font-family: 'Averia Serif Libre', cursive;
     margin-left: 10px;
 }
 
