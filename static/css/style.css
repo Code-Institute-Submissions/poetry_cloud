@@ -4,11 +4,13 @@ body {
     font-family: 'Playfair Display', serif;
     justify-content: center;
     font-weight: 400;
-    background-color: #eeeeee;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #e0e0e0;
 }
+
+/* ------ Nav ---- */
 
 nav ul a {
     color: black;
@@ -32,16 +34,22 @@ main {
 }
 
 /* ------ Social icons ---- */
+
 i.fab {
     padding: 10px;
 }
+
 /* ------ Home page ---- */
 
-div.container.features {
-    margin-top: 50px;
+div.row.features {
+    margin-top: 20px;
 }
 
 ul.feature-list {
     line-height: 2.3;
     font-size: 20px;
+}
+
+#poems {
+    background-color: #212121;
 }

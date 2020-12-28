@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container features">
-    <div class="row">
-        <div class="col s12 m6 l6">
-            <h5 class="left-align red-text text-darken-1">Welcome to Poetry Cloud!</h5>
+    
+    <div class="row features">
+        <div class="col s12 center-align">
+            <h5 class="center-align red-text text-darken-1">Welcome to Poetry Cloud!</h5>
             <ul class="feature-list">
                 <li>Manage and edit your poetry collection!</li>
                 <li>Create an account & add your poems!</li>
@@ -14,14 +14,14 @@
             </ul>
         </div>
         
-        <div class="col s12 m6 l6">
-            <img class="responsive-img" src="static/images/typewriter.png">
+        <div class="col s12 center-align">
+            <img class="responsive-img" src="static/images/orange.jpg">
         </div>
     </div>
-    
+   
 
     <div class="row">
-        <div class="col s12 m8 offset-m2">
+        <div class="col s12">
             <div class="card-panel home">
                 <h5 class="center-align red-text text-darken-1"> 
                     Your Submissions
@@ -33,19 +33,20 @@
             </div>
         </div>
     </div>
-
+     
+    <section id="poems">
     <ul class="collapsible popout">
         {% for poem in poems %}
         <li>
             <div class="collapsible-header">
                 <div class="row">
-                    <div class="col s12 center-align">   
+                    <div class="col s12">   
                         <i class="far fa-arrow-alt-circle-down red-text text-darken-1"></i>
                         <strong>{{ poem.poem_title }}</strong> : By {{ poem.poem_author }}
                     </div>
                 </div> 
                 <div class="row">
-                    <div class="col s12 center-align"> 
+                    <div class="col s12"> 
                         {% if session.user|lower == poem.created_by|lower %}    
                         <a href="{{ url_for('edit_poem', poem_id=poem._id) }}" class="waves-effect waves-light btn-small red darken-1">Edit</a> 
                         <a href="{{ url_for('delete_poem', poem_id=poem._id) }}" class="waves-effect waves-light btn-small red darken-1">Delete</a>
@@ -53,8 +54,8 @@
                     </div>
                 </div>            
             </div>
-            
-            <div class="collapsible-body">
+     
+            <div class="collapsible-body white-text">
                 <strong>{{ poem.type_name }}</strong>
                 <p>{{ poem.poem_text }}</p>
                 <p>Poem submitted by: {{ poem.created_by }}</p>
@@ -63,6 +64,6 @@
         </li>
         {% endfor %}
   </ul>
-  </div>      
+  </section>       
 
 {% endblock %}    
