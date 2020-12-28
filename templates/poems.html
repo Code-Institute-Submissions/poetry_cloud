@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+    <div class="container features">
     <div class="row">
-        <div class="col s12 m6 l6 features">
+        <div class="col s12 m6 l6">
                 <h5>Features</h5>
                 <h6>Create an account & add your own poems!</h6>
                 <h6>Select poetry types like Haiku, Sonnet, Free Verse etc.</h6>
@@ -12,9 +12,10 @@
         </div>
         
         <div class="col s12 m6 l6">
-                <img class="responsive-img" src="images/typewriter.jpg">
+            <img class="responsive-img" src="static/images/typewriter.png">
         </div>
     </div>
+    
 
     <div class="row">
         <div class="col s12 m8 offset-m2">
@@ -59,6 +60,6 @@
         </li>
         {% endfor %}
   </ul>
-        
+  </div>      
 
 {% endblock %}    

@@ -36,6 +36,6 @@ i.fab {
     padding: 10px;
 }
 
-.features {
-    line-height: 1.8;
+div.container.features {
+    margin-top: 50px;
 }
