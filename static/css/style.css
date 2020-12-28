@@ -35,3 +35,7 @@ main {
 i.fab {
     padding: 10px;
 }
+
+.features {
+    line-height: 1.8;
+}
