@@ -4,8 +4,8 @@
     
     <div class="row features">
         <div class="col s12 center-align">
-            <h5 class="center-align red-text text-darken-1">Welcome to Poetry Cloud!</h5>
-            <ul class="feature-list">
+            <h4 class="center-align red-text">Welcome to Poetry Cloud!</h4>
+            <ul class="feature-list black-text">
                 <li>Manage and edit your poetry collection!</li>
                 <li>Create an account & add your poems!</li>
                 <li>Choose types like Free Verse, Haiku or Sonnet!</li>
@@ -15,14 +15,14 @@
         </div>
         
         <div class="col s12 center-align">
-            <img class="responsive-img" src="static/images/typewriter.png">
+            <img class="responsive-img" src="static/images/notes.png">
         </div>
     </div>
    
 
     <div class="row">
         <div class="col s12">
-            <div class="card-panel home">
+            
                 <h5 class="center-align red-text text-darken-1"> 
                     Your Submissions
                 </h5>
@@ -30,7 +30,7 @@
                     The most recent poems submitted by our community of writers!
                 </h6>
                 
-            </div>
+            
         </div>
     </div>
      
@@ -55,7 +55,7 @@
                 </div>            
             </div>
      
-            <div class="collapsible-body white-text">
+            <div class="collapsible-body">
                 <strong>{{ poem.type_name }}</strong>
                 <p>{{ poem.poem_text }}</p>
                 <p>Poem submitted by: {{ poem.created_by }}</p>
