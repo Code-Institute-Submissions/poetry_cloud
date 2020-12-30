@@ -27,6 +27,14 @@ def get_poems():
     return render_template("poems.html", poems=poems)
 
 
+# Search function
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    poems = list(mongo.db.poems.find({"$text": {"$search": query}}))
+    return render_template("poems.html", poems=poems)
+
+
 # Register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
