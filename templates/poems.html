@@ -6,8 +6,8 @@
         <div class="col s12 center-align">
             <h4 class="center-align red-text">Welcome to Poetry Cloud!</h4>
             <ul class="feature-list black-text">
+                <li>Create an account now & start adding your poems!</li>
                 <li>Manage and edit your poetry collection!</li>
-                <li>Create an account & add your poems!</li>
                 <li>Choose types like Free Verse, Haiku or Sonnet!</li>
                 <li>Private profile feature!</li> 
                 <li>Share your poetry with our community!</li>  
@@ -58,10 +58,10 @@
     <div class="row">
         <div class="col s12">
                 <h5 class="center-align red-text text-darken-1"> 
-                    Your Submissions
+                    Community Poems!
                 </h5>
                 <h6 class="center-align black-text"> 
-                    The most recent poems submitted by our community of writers!
+                    The most recent poems submitted by our talented community!
                 </h6>
         </div>
     </div>
@@ -87,7 +87,7 @@
      
             <div class="collapsible-body">
                 <strong>{{ poem.type_name }}</strong>
-                <blockquote>{{ poem.poem_text }}</blockquote>
+                <textarea rows="50" cols="20" wrap="hard">{{ poem.poem_text }}</textarea>
                 <p>Poem submitted by: {{ poem.created_by }}</p>
             </div>
             
