@@ -55,3 +55,10 @@ ul.feature-list {
 div.footer-copyright.red.darken-4 {
     padding: 3px;
 }
+
+/* ------ Poem text ---- */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
+}
