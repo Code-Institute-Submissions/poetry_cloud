@@ -20,13 +20,8 @@ nav ul a:hover {
     color: #d32f2f;
 }
 
-
 main {
     flex: 1 0 auto;
-}
-
-.btn-small {
-    margin: 5px;
 }
  
 .nav-wrapper .brand-logo {
@@ -35,17 +30,7 @@ main {
     margin-left: 10px;
 }
 
-.card-panel.home {
-    padding: 8px;
-}
-
-/* ------ Social icons ---- */
-
-i.fab {
-    padding: 10px;
-}
-
-/* ------ Home page ---- */
+/* ------ Features ---- */
 
 div.row.features {
     margin-top: 20px;
@@ -55,6 +40,23 @@ ul.feature-list {
     line-height: 2.3;
     font-size: 20px;
     background-image: url("/static/images/lines.png");
+}
+
+/* ------ Search buttons ---- */
+
+.btn-small {
+    margin: 5px;
+}
+
+.btn-small:hover {
+    text-shadow: 2px 2px 3px black;
+}
+
+/* ------ Poem text ---- */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 /* ------ Footer ---- */
@@ -79,10 +81,9 @@ a.white-text.footer-link:hover {
     text-decoration: underline;
 }
 
-/* ------ Poem text ---- */
-pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  text-align: justify;
+i.fab {
+    padding: 10px;
 }
+
+
 
