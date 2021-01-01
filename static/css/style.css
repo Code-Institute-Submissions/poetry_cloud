@@ -16,6 +16,11 @@ nav ul a {
     color: black;
 }
 
+nav ul a:hover {
+    color: #d32f2f;
+}
+
+
 main {
     flex: 1 0 auto;
 }
