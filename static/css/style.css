@@ -52,8 +52,26 @@ ul.feature-list {
     background-image: url("/static/images/lines.png");
 }
 
+/* ------ Footer ---- */
+
 div.footer-copyright.red.darken-4 {
     padding: 3px;
+}
+
+.fa-facebook:hover {
+    text-shadow: 2px 2px 3px black;
+}
+
+.fa-instagram:hover {
+    text-shadow: 2px 2px 3px black;
+}
+
+.fa-twitter:hover {
+    text-shadow: 2px 2px 3px black;
+}
+
+a.white-text.footer-link:hover {
+    text-decoration: underline;
 }
 
 /* ------ Poem text ---- */
@@ -62,3 +80,4 @@ pre {
   word-wrap: break-word;
   text-align: justify;
 }
+
