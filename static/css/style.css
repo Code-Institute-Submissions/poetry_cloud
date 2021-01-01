@@ -85,5 +85,12 @@ i.fab {
     padding: 10px;
 }
 
+/* ------ Media queries ---- */
+
+@media only screen and (max-width: 600px) {
+  img.responsive-img.typew {
+    margin-top: 20px;
+  }
+}
 
 
