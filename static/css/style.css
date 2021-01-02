@@ -94,4 +94,7 @@ i.fab {
   ul.feature-list {
     font-size: 13px;
   }
+  h4 {
+      font-size:6vw;
+  }
 }
