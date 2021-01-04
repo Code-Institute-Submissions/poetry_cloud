@@ -74,7 +74,7 @@
             <div class="collapsible-header">
                 <div class="row">
                     <div class="col s12 center-align">   
-                        <p><i class="far fa-arrow-alt-circle-down red-text text-darken-1"></i>{{ poem.poem_title }} <br>by {{ poem.poem_author }}</p>
+                        <p><i class="far fa-arrow-alt-circle-down red-text text-darken-1"></i>{{ poem.poem_title }} by {{ poem.poem_author }}</p>
                     </div>
                     <div class="col s12 center-align"> 
                         {% if session.user|lower == poem.created_by|lower %}    
