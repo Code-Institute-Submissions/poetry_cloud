@@ -30,6 +30,31 @@ main {
     margin-left: 10px;
 }
 
+/* ------ Headings ---- */
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 100%;
+    margin: 1rem 0 1.68rem 0;
+}
+
+h2 {
+    font-size: 1.86rem;
+    line-height: 110%;
+    margin: 1.373333rem 0 0.424rem 0;
+}
+
+h3 {
+    font-size: 1.3rem;
+    line-height: 135%;
+    margin: -0.053333rem 0 1.168rem 0;
+}
+
+p.community, p.search {
+    font-size: 1.3rem;
+    margin: -0.053333rem 0 0.168rem 0;
+}
+
 /* ------ Features ---- */
 
 div.row.features {

@@ -4,7 +4,7 @@
     <!-- Welcome header and features -->
     <div class="row features">
         <div class="col s12 center-align">
-            <h4 class="center-align red-text">Welcome to Poetry Cloud!</h4>
+            <h1 class="red-text">Welcome to Poetry Cloud!</h1>
             <ul class="feature-list black-text">
                 <li>Create an account to start adding your poems!</li>
                 <li>Manage and edit your poetry collection!</li>
@@ -26,12 +26,12 @@
     </div>
     <div class="row">
         <div class="col s12">
-                <h5 class="center-align red-text text-darken-1"> 
+                <h2 class="center-align red-text text-darken-1"> 
                     Search The Database
-                </h5>
-                <h6 class="center-align black-text"> 
+                </h2>
+                <p class="center-align black-text search"> 
                     Search our community poems by title, author or keywords!
-                </h6>
+                </p>
         </div>
     </div>
 
@@ -57,12 +57,12 @@
 
     <div class="row">
         <div class="col s12">
-                <h5 class="center-align red-text text-darken-1"> 
+                <h2 class="center-align red-text text-darken-1"> 
                     Community Poems!
-                </h5>
-                <h6 class="center-align black-text"> 
+                </h2>
+                <p class="center-align black-text community"> 
                     The most recent poems submitted by our talented community!
-                </h6>
+                </p>
         </div>
     </div>
 
@@ -74,7 +74,7 @@
             <div class="collapsible-header">
                 <div class="row">
                     <div class="col s12 center-align">   
-                        <h6><i class="far fa-arrow-alt-circle-down red-text text-darken-1"></i>{{ poem.poem_title }} : by {{ poem.poem_author }}</h6>
+                        <p><i class="far fa-arrow-alt-circle-down red-text text-darken-1"></i>{{ poem.poem_title }} <br>by {{ poem.poem_author }}</p>
                     </div>
                     <div class="col s12 center-align"> 
                         {% if session.user|lower == poem.created_by|lower %}    
