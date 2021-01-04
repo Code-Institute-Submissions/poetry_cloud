@@ -22,11 +22,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-""" The @app.route decorator is used to bind the URL to the get_poems function.
+# The @app.route decorator is used to bind the URL to the get_poems function.
+# As a result, when the user visits the URL,
+# the output of the function will render in the browser.
 
-As a result, when the user visits the URL,
-the output of the function will render in the browser.
-"""
 
 @app.route("/")
 @app.route("/get_poems")
@@ -46,6 +45,16 @@ def search():
 # Register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Register a new user and log that user in. If account exists, return error
+    message to user.
+
+    Args:
+        message (str): The piece of text to be print to the console
+
+    Returns:
+        None
+    """
     if request.method == "POST":
         """ Verify if the username already exists in the database."""
         existing_user = mongo.db.users.find_one(
