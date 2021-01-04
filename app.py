@@ -34,7 +34,6 @@ def get_poems():
     return render_template("poems.html", poems=poems)
 
 
-# Search function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -42,57 +41,42 @@ def search():
     return render_template("poems.html", poems=poems)
 
 
-# Register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """
-    Register a new user and log that user in. If account exists, return error
-    message to user.
-
-    Args:
-        message (str): The piece of text to be print to the console
-
-    Returns:
-        None
-    """
     if request.method == "POST":
-        """ Verify if the username already exists in the database."""
+        # Verify if the username already exists in the database.
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
             flash("That username is already in use, please choose another.")
             return redirect(url_for("register"))
-        """ Gets the details from the register form."""
+        # Gets the details from the register form.
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        """ Inserts the user into the users collection."""
+        # Inserts the user into the users collection.
         mongo.db.users.insert_one(register)
 
-        """ Place the newly created user into session cookie."""
+        # Place the newly created user into session cookie.
         session["user"] = request.form.get("username").lower()
         flash("You have successfully registered!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
-# Login function
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        """ If request method equals POST, check if username
-         is found in the db.
-        """
+        # If request method equals POST, check if username
+        # is found in the db.
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            """ Then check if the hashed password matches the one the user
-            submitted if true, log the user in and display a welcome message.
-            """
-
+            # Then check if the hashed password matches the one the user
+            # submitted if true, log the user in and display a welcome message.
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
@@ -100,29 +84,26 @@ def login():
                     return redirect(url_for(
                         "profile", username=session["user"]))
             else:
-                """ If the password doesn't match,
-                flash message and redirect to login.
-                """
+                # If the password doesn't match,
+                # flash message and redirect to login.
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            """ If there wasn't a match for the existing_user variable,
-            display message and redirect to login and try again.
-            """
+            # If there wasn't a match for the existing_user variable,
+            # display message and redirect to login and try again.
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
 
 
-# Profile function
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """ Retrieve the username from db which belongs to the session user.
-    Find poems created by the user then render to appropriate profile or
-    redirect to login if unsuccessful.
-    """
+    # Retrieve the username from db which belongs to the session user.
+    # Find poems created by the user then render to appropriate profile or
+    # redirect to login if unsuccessful.
+
     try:
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
@@ -132,15 +113,14 @@ def profile(username):
         return redirect(url_for("login"))
 
 
-# Logout function
 @app.route("/logout")
 def logout():
-    """ Remove the session cookie for 'user' and redirect to login."""
+    # Remove the session cookie for 'user' and redirect to login.
     flash("You have successfully logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
-# Add Poem function
+
 @app.route("/add_poem", methods=["GET", "POST"])
 def add_poem():
     if request.method == "POST":
@@ -159,13 +139,11 @@ def add_poem():
     return render_template("add_poem.html", types=types)
 
 
-# Edit poem function.
 @app.route("/edit_poem/<poem_id>", methods=["GET", "POST"])
 def edit_poem(poem_id):
-    """ Search for the poem in the db with the poem id.
-    Then update that poem with data from submit dictionary
-    and display a message. Return user to edit page.
-    """
+    # Search for the poem in the db with the poem id.
+    # Then update that poem with data from submit dictionary
+    # and display a message. Return user to edit page.
     if request.method == "POST":
         submit = {
             "type_name": request.form.get("type_name"),
@@ -182,34 +160,30 @@ def edit_poem(poem_id):
     return render_template("edit_poem.html", poem=poem, types=types)
 
 
-# Delete poem function.
 @app.route("/delete_poem/<poem_id>")
 def delete_poem(poem_id):
-    """Search for the poem in the db with the poem id.
-    Then remove from db, flash message to user and
-    return user to home page
-    """
+    # Search for the poem in the db with the poem id.
+    # Then remove from db, flash message to user and
+    # return user to home page
     mongo.db.poems.remove({"_id": ObjectId(poem_id)})
     flash("Poem Successfully Deleted")
     return redirect(url_for("get_poems"))
 
 
-# Get types function.
-""" Gets types from the db, converts to a list and
-returns to types template.
-"""
 @app.route("/get_types")
 def get_types():
+    # Gets types from the db, converts to a list and
+    # returns to types template.
+
     types = list(mongo.db.types.find().sort("type_name", 1))
     return render_template("types.html", types=types)
 
-# Add type function.
+
 @app.route("/add_type", methods=["GET", "POST"])
 def add_type():
-    """ If add_type function is called using the 'POST' method
-    then get the data from the form and insert into db
-    Otherwise, default 'GET' method will render the empty 'Add Type' form.
-    """
+    # If add_type function is called using the 'POST' method
+    # then get the data from the form and insert into db
+    # Otherwise, default 'GET' method will render the empty 'Add Type' form.
     if request.method == "POST":
         type = {
             "type_name": request.form.get("type_name")
@@ -221,13 +195,12 @@ def add_type():
     return render_template("add_type.html")
 
 
-# Edit type function
-"""If the request method equals 'POST', submit the edited type from the form
-Then use the update method on the types collection.
-Once updated, redirect the admin back to get_types view.
-"""
 @app.route("/edit_type/<type_id>", methods=["GET", "POST"])
 def edit_type(type_id):
+    # If the request method equals 'POST', submit the edited type from the form
+    # Then use the update method on the types collection.
+    # Once updated, redirect the admin back to get_types view.
+
     if request.method == "POST":
         submit = {
             "type_name": request.form.get("type_name")
@@ -240,13 +213,12 @@ def edit_type(type_id):
     return render_template("edit_type.html", type=type)
 
 
-# Delete type function
-""" Use the remove method on the types collection in MongoDB to delete type.
-Once deleted, display flash message to admin user.
-Redirect admin user back to all available types.
-"""
 @app.route("/delete_type/<type_id>")
 def delete_type(type_id):
+    # Use the remove method on the types collection in MongoDB to delete type.
+    # Once deleted, display flash message to admin user.
+    # Redirect admin user back to all available types.
+
     mongo.db.types.remove({"_id": ObjectId(type_id)})
     flash("Poem Type Successfully Deleted")
     return redirect(url_for("get_types"))
