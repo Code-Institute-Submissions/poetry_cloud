@@ -1,3 +1,6 @@
+// JQuery initialisation code taken from Matrialize CSS
+// https://materializecss.com/
+
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('.collapsible').collapsible();

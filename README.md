@@ -21,7 +21,7 @@ Link to website - https://poetry-cloud.herokuapp.com/get_poems
 * To provide a useful and convenient app for poets to store, share and manage their work.
 * To promote poetry and encourage poets to develop a body of work and share it with their community.
 * To enable users to contribute their own poems or share their favourite poems by other writers. 
-* Building a minimal viable product to test the market and establish interest. 
+* Build a minimal viable product to test the market and establish interest. 
 
 ## **UX**
 
@@ -172,11 +172,11 @@ There are a number of carefully chosen features on the homepage:
 * User friendly flash messages display on the screen to guide and inform the user at key events.
 
 ### **Features to implement in future**
-When considering the trade off between importance and viability, the following features could not be implemented at this stage but would make great additions in future:
+When considering the trade off between importance and viability, the following features could not be implemented at this stage but would make valuable additions in future and improve the user experience.
 
 * Image submissions - I would like to have allowed users the option of uploading and displaying images of their original writing to enhance the user experience but this wasn't a recommended option with MongoDB at the present time due to a number of issues.
 * I would like to give registered users the option to submit poems to the community or to keep their poems private. I would build this into the profile sections so that users can toggle this on and off as they wish.
-  Unfortunately I could not add this feature in this release due to time constraints. 
+* I think it would be great to add social share buttons to each poem listed to allow the user to quickly post their poems on their social pages.  
 
 ## **Languages Used** 
 * HTML, CSS, Javascript and Python are used in this project.
@@ -240,7 +240,7 @@ All images used in this project were created by the talented photographers at Un
 https://unsplash.com/ 
 
 ### **Code**
-I borrowed code from the Code Institute's Task Manager Mini Project and appropriated to help with CRUD functions and authentication functionality.
+I borrowed code from the Code Institute's Task Manager Mini Project and appropriated to help with building CRUD functions, search and authentication functionality.
 https://www.youtube.com/watch?v=y72Dq3GRxhc&feature=youtu.be
 
 Form validation for select dropdown. Source code copied from Code Institute Mini Project.
@@ -252,11 +252,11 @@ https://stackoverflow.com/questions/54727612/materialize-css-dynamically-change-
 I used this code from Stack Overflow to help create responsive pre tags.
 https://stackoverflow.com/questions/34691470/responsive-pre-tag
 
-From Materialize CSS I added code to help build my forms 
-
+From Materialize CSS I added code to help build my forms and collapsible popout lists.
+https://materializecss.com/
 
 ### **Acknowledgements**
-Poetry can often be seen as highbrow, stuffy and a bit inaccessible. I wanted, to create an app that let's anyone have a go and share it with a community of like minded people. 
+Poetry can often be seen as stuffy and a bit inaccessible. I wanted, to create an app that let's anyone have a go and share it with a community of like minded people. 
 On this app you can write anything you like as a Free Verse poem or be more specific and write a Sonnet if you want! 
 It's a simple app for aspiring poets or even more established ones but hopefully it's a useful one that people will enjoy and find accessible. 
 

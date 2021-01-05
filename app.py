@@ -224,6 +224,19 @@ def delete_type(type_id):
     return redirect(url_for("get_types"))
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    # Custom 404 error page will display if user types incorrect url
+    # or url does not exist.
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def server_error(e):
+    # Custom 500 Internal server error page will display if the app fails.
+    return render_template('500.html'), 500
+
+
 # How and where to run the application.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+  <h1 class="center-align red-text text-darken-1 error">Page Not Found</h1>
+
+  <p class="center-align error">Oh dear!<br> We're sorry but we can't seem to find that page.<br></p>
+
+  <p class="center-align error"><a href="{{ url_for('get_poems') }}">Go to homepage?</a></p>
+  
+
+{% endblock %}
