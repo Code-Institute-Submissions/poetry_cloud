@@ -58,13 +58,30 @@ found in the separate [TESTING.md](https://github.com/JohnW876/TESTING.md) file.
 
 ### **Data design**
 
+When designing the database for the app I stuck closely to the needs represented in the user stories. These user stories guided the creation of three separate collections of users, types and poems. The collections are shown here below in their field and value pairs. The data records are stored in MongoDB as BSON documents with unique id numbers.
+
+* Users Collection - In order for users to manage a store of their own uploaded poems it was obvious that authentication and a personal profile would be a key feature of the app so therefore a user collection would be required to store the usernames and passwords of registered users.
+
+![Users Collection](documentation/screenshots/users-coll.png)
+
+* Types Collection - Users need to be able to add certain types of poem. Research showed 13 popular types so I decided to build those into a form with a selection dropdown for the users to choose from when adding or editing poems. These types would also need to be managed by an admin user with CRUD functionality. This required the creation of 13 documents in the database represented by the diagram shown below.
+
+![Types Collection](documentation/screenshots/types-coll.png)
+
+* Poems Collection - When adding a poem to the database I designed the form to allow the user to first choose from the established list of poem type names. Then users can input the poem title, author and the text of the poem. Finally the database would store who the record was created by using the username. This would allow users to have full CRUD functionality and store poems in their own personal profile.
+
+![Poems Collection](documentation/screenshots/poems-coll.png)
+
+* Index - I created a text index on the poems collection to allow users to search the database for results based on fields relating to poem title, poem author or a word used in the poem text. 
+
+
 
 ### **Wireframe mockups:**
-Below is a link to the project's wireframe mockups which were created using Balsamiq Wireframes software prior to the build to help with visualisation of features and layout. 
+Below is a link to the project's wireframe mockups which were created using Balsamiq Wireframes software prior to development to help with visualisation of features and layout. 
 
 https://github.com/JohnW876/poetry_cloud/tree/master/wireframes
  
-Wireframe mockups were created for every page of the website at mobile, tablet and desktop sizes and I referred to them throughout the build. 
+Wireframe mockups were created for every page of the website at mobile, tablet and desktop sizes and I referred to them throughout development. 
 
 
 ### **User Expectations:**
@@ -241,19 +258,19 @@ https://unsplash.com/
 
 ### **Code**
 I borrowed code from the Code Institute's Task Manager Mini Project and appropriated to help with building CRUD functions, search and authentication functionality.
-https://www.youtube.com/watch?v=y72Dq3GRxhc&feature=youtu.be
+* https://www.youtube.com/watch?v=y72Dq3GRxhc&feature=youtu.be
 
 Form validation for select dropdown. Source code copied from Code Institute Mini Project.
-https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/04-AddingATask-WritingToTheDatabase/02-materialize-select-validation/static/js/script.js 
+* https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/04-AddingATask-WritingToTheDatabase/02-materialize-select-validation/static/js/script.js 
 
 I used this code from Stack Overflow to change the default colour of the select options dropdown in my forms.
-https://stackoverflow.com/questions/54727612/materialize-css-dynamically-change-the-background-and-text-color-of-the-select
+* https://stackoverflow.com/questions/54727612/materialize-css-dynamically-change-the-background-and-text-color-of-the-select
 
 I used this code from Stack Overflow to help create responsive pre tags.
-https://stackoverflow.com/questions/34691470/responsive-pre-tag
+* https://stackoverflow.com/questions/34691470/responsive-pre-tag
 
 From Materialize CSS I added code to help build my forms and collapsible popout lists.
-https://materializecss.com/
+* https://materializecss.com/
 
 ### **Acknowledgements**
 Poetry can often be seen as stuffy and a bit inaccessible. I wanted, to create an app that let's anyone have a go and share it with a community of like minded people. 
