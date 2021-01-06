@@ -1,5 +1,7 @@
-# **Poetry Cloud Website**
+# **Poetry Cloud**
 
+
+### About
 * Poetry Cloud is a useful and accessible app for poets allowing the user to manage their poems in one convenient place.
 * Unregistered users can search the database on the homepage to view poems by author, title or keywords. 
 * Users can register and login to access their personal profile which lists only their poems.
@@ -69,7 +71,7 @@ When designing the database for the app I stuck closely to the needs represented
 
 ![Types Collection](documentation/screenshots/types-coll.png)
 
-* Poems Collection - When adding a poem to the database I designed the form to allow the user to first choose from the established list of poem type names. Then users can input the poem title, author and the text of the poem. Finally the database would store who the record was created by using the username. This would allow users to have full CRUD functionality and store poems in their own personal profile.
+* Poems Collection - When adding a poem to the database I designed the form to allow the user to first choose from the established list of poem type names. Then users can input the poem title, author and the text of the poem. Finally the database would store who the record was created by using the username. This would allow users to have full CRUD (Create, Read, Update and Delete) functionality and store poems in their own personal profile.
 
 ![Poems Collection](documentation/screenshots/poems-coll.png)
 
@@ -120,7 +122,9 @@ Wireframe mockups were created for every page of the website at mobile, tablet a
 
 * The site allows anyone to search the database for poems submitted by registered users.
 
-* The site features authentication so that registered users can safely login to their profile and view their submitted poems. They can also add, edit or delete poems as they wish.
+* The site features authentication so that users can register an account with a username and password and safely login to their profile and view their submitted poems.
+
+* Once logged in, users can add, edit or delete poems as they wish.
 
 * A site administrator can login and manage the poem types. They can add, update or delete poem types as they wish. 
 
@@ -152,9 +156,10 @@ There are a number of carefully chosen features on the homepage:
 
 ### **Register Page**
 * A simple form allowing the user to create a username and password.
+* The username has to be alphanumeric with between 5 and 15 characters in format for increased security. 
 * Register button with styling and effects consistent with the Log In form.
 * Link to Log In page if already registered.
-* Flash messages display appropriately based on user input such as "You have successfully registered!"
+* Flash messages display appropriately based on user input such as "You have successfully registered!" or "That username is already in use, please choose another."
 
 ### **Profile Page**
 * Once registered and logged in the user can visit their 'Profile' from the main navigation and view a list of their submitted poems by title and author.
@@ -192,7 +197,7 @@ There are a number of carefully chosen features on the homepage:
 When considering the trade off between importance and viability, the following features could not be implemented at this stage but would make valuable additions in future and improve the user experience.
 
 * Image submissions - I would like to have allowed users the option of uploading and displaying images of their original writing to enhance the user experience but this wasn't a recommended option with MongoDB at the present time due to a number of issues.
-* I would like to give registered users the option to submit poems to the community or to keep their poems private. I would build this into the profile sections so that users can toggle this on and off as they wish.
+* I would like to give registered users the option to either submit poems to the community or to keep their poems private. I would build this into the profile sections so that users can toggle this on and off as they wish.
 * I think it would be great to add social share buttons to each poem listed to allow the user to quickly post their poems on their social pages.  
 
 ## **Languages Used** 
@@ -213,19 +218,70 @@ When considering the trade off between importance and viability, the following f
 
 Information regarding testing can be found in this separate [TESTING.md](https://github.com/JohnW876/TESTING.md) file.
 
+---
 ## **Deployment**
 
-This project was developed with the Gitpod IDE and then pushed to GitHub.
+This project was developed with the Gitpod IDE and then pushed to a GitHub repository. The app is deployed via Heroku.
 
-**The following steps were taken to deploy the project to GitHub pages.**
+To deploy the app:
 
+**Git Clone**
 
+1. Navigate to the github repository via this link - https://github.com/JohnW876/poetry_cloud
+2. Click on the green dropdown labelled Code.
 
+![Screenshot Clone Dropdown](/documentation/screenshots/gitpod.png)
 
+3. The box will display as below.
 
+![Screenshot Clone Dropdown](/documentation/screenshots/https.png)
 
+4. Copy the URL in the box to clone with HTTPS.
+5. Open your preferred IDE (Integrated development environment).
+6. Change the working directory to the location you want the cloned directory to be made.
+7. Type git clone and paste the URL from step 4.
+8. Press enter to create your local clone. 
+9. In your IDE create an env.py file containing the following:
 
+![env.py file](/documentation/screenshots/envpy.png)
 
+10. Ensure that you populate this with your "Secret Key", "Your Mongo URI" and "Your MongoDB Name"
+11. Finally, make sure to add env.py to your .gitignore file.
+
+**To Deploy To Heroku**
+
+1. Type the folowing command in the terminal - **pip freeze > requirements.txt**
+2. This creates a requirements.txt file
+3. Now create a Procfile using the terminal command -  **echo web: python app.py > Procfile**
+4. Add and commit the requirements file and Procfile and then git push to GitHub.
+5. Now go to [Heroku](https://id.heroku.com/login) and log in.
+6. From your dashboard in Heroku, click on the 'New' button as shown below and select Create new app.
+
+![Heroku New Button](/documentation/screenshots/new.png)
+
+7. Give the app a name, select your region and then click create app.
+
+![Heroku Create App](/documentation/screenshots/app.png)
+
+8. From the dashboard of the new app, under the Deploy tab, next to Deployment Method, select Github - Connnect to Github.
+
+![Heroku Deploy](/documentation/screenshots/method.png)
+
+9. Below in the Connect To Github section, search for the correct repository and then connect.
+
+10. In the dashboard of the app under 'Settings', click  'Reveal Config Vars'
+
+11. Input the same values in Config Vars as those stored in the env.py file.
+
+![Config Vars](/documentation/screenshots/config.png)
+
+12. In the 'Deploy' tab choose a branch to deploy and click 'Enable Automatic Deploys' Once enabled, it will look like this:
+
+![Enabled Automiatic Deploys](/documentation/screenshots/enabled.png)
+
+13. Click open app at the top of the page to view the newly deployed app. 
+
+---
 
 ## **Credits**
 
