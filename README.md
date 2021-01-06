@@ -42,15 +42,16 @@ A mobile first approach was taken to create this project with consideration of e
 
 ### **User Stories**
 
-1. As a poet, I want to document my work so that I can be organised and have each item readily available. (Profile page with a list of my poems. Search feature on home page to find poems)
-2. As a poet, I want to add/store my poems so that I can more easily manage them in the future. (Add poem form, Edit poem form, view all in in profile or home page, edit and delete poems from profile or home page.)
-3. As a poet, I want to be able to add new poems to existing types such as Haiku or Sonnet so that I can build a body of work. (Easily add a new poem to an existing poetry type with add poem form)
-4. As a poet, I want to be able to view all of my poems in one place so that it’s easy to see and manage my work. (Profile page)
-5. As a poet, I want to be able to find a particular poem in my collection so that I can view, edit or delete it. (Search function on home page)
-6. As a poet, I want to be able to submit the title and text of my poems, so that I can add them to my collection and identify them later. (Text area on add poem form)
-7. As a poetry fan, I want to be able to submit poems by well known authors, so that I can store my favourites and share with the community. (Text area on form to add any poem text. Name of author/submitted by clearly shown in listing)
-8. As a poet I want to be able to share my poems online with the poetry community and see the work of my fellow poets. (Poems auto display on home page and return specific search results via search function. Social links to share from.)
-9. As an administrator of the site, I want to be able to add, read, update and delete poetry types so that I can provide the best experience for the user. (Manage Types page only avaiable to admin)
+1. As a poet, I want to document my work so that I can be organised and have each item readily available. 
+2. As a poet, I want to add/store my poems so that I can more easily manage them in the future. 
+3. As a poet, I want to be able to edit and delete existing poems so that I can improve and update my collection.
+4. As a poet, I want to be able to add new poems to existing types such as Haiku or Sonnet so that I can build a body of work. 
+5. As a poet, I want to be able to view all of my poems in one place so that it’s easy to see and manage my work. 
+6. As a poet, I want to be able to find a particular poem in my collection so that I can view, edit or delete it. 
+7. As a poet, I want to be able to submit the title and text of my poems, so that I can add them to my collection and identify them later. 
+8. As a poetry fan, I want to be able to submit poems by well known authors, so that I can store my favourites and share with the community. 
+9. As a poet I want to be able to share my poems online with the poetry community and see the work of my fellow poets. 
+10. As an administrator of the site, I want to be able to add, read, update and delete poetry types so that I can provide the best experience for the user. 
 
 
 Further information and screenshots showing how this project meets the user's needs can be
@@ -142,7 +143,6 @@ There are a number of carefully chosen features on the homepage:
 * If logged in, users may edit and delete poems they have submitted from both the home page and from their profile. 
 * Responsive footer featuring social media icon links and useful links to poetry orgs and websites.
 
- 
 ### **Login Page**
 * A simple login form which requires the user to enter their previously registered username and password.
 * Once registered and logged in, further nav links reveal to 'Add Poem', 'Profile' and 'Log Out'.
@@ -219,33 +219,13 @@ This project was developed with the Gitpod IDE and then pushed to GitHub.
 
 **The following steps were taken to deploy the project to GitHub pages.**
 
-1. Login to GitHub.
-2. Select JohnW876/Jokes-Quotes from the list of repositories.
-3. Click on the Settings heading near the top of the page.
-4. Scroll down to the GitHub pages section.
-5. Under Source click on the 'None' button dropdown and select Master Branch.
-6. The page will auto-refresh.
-7. Scroll down again to the GitHub pages section and copy the link to the newly deployed website.
- - https://johnw876.github.io/Jokes-Quotes/
 
-The Development Branch and the Master Branch are identical at the time of this project's submission. 
 
-**How to run this code locally:**
-1. Navigate to the github repository via this link - https://github.com/JohnW876/Jokes-Quotes
-2. Click on the green dropdown labelled Code.
-3. The box will display as below.
 
-![Screenshot Clone Dropdown](/assets/screenshots/clone.png)
 
-4. Copy the URL in the box to clone with HTTPS.
-5. Open your preferred IDE.
-6. Change the working directory to the location you want the cloned directory to be made.
-7. Type git clone and paste the URL from step 4.
-8. Press enter to create your local clone. 
 
-**To run on Gitpod:**
-1. Install the Gitpod browser extension. See link to instructions here - https://www.gitpod.io/docs/browser-extension/
-2. Once you have the Gitpod extension installed then simply click on the green Gitpod button as shown in the screenshot above and it will create a new workspace for you. 
+
+
 
 ## **Credits**
 
