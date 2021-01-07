@@ -134,6 +134,8 @@ Wireframe mockups were created for every page of the website at mobile, tablet a
 
 * The footer contains links to social media websites and also to related poetry orgs and websites. 
 
+* Custom error pages to let the user know if a page can't be found (404 status code) or if there has been an internal server error (500). Featuring links back to the homepage.
+
 
 ### **Homepage**
 There are a number of carefully chosen features on the homepage:
