@@ -393,10 +393,13 @@ All interactive elements were tested and found to be working correctly except fo
 
 ### **Code Validators:**
 
-The following websites were used to validate the code and there were no errors or warnings to show:
+The following websites were used to validate the code and there were no errors except for a single line indentation in python code that was easily fixed:
+A few warnings were displayed with the html validator but these related to Jinja templating being in the code as it was unexpected. There were no errors in the html itself. 
 
 HTML - [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
 
 CSS - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
 Javascript - [JSHint javascript code analysis](https://jshint.com/)
+
+Python - [PEP8 Online Check](http://pep8online.com/)
