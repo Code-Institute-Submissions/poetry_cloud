@@ -384,9 +384,11 @@ All interactive elements were tested and found to be working correctly except fo
 
 ### **Issues**
 1. On the Manage Types page a couple of the type cards were not aligning correctly in a block.
+2. Found through testing that the user was returned to the home page instead of their profile after adding a poem. 
 
 ### **Fixes**
-1. This issue has yet to be resolved.
+1. The cards were auto resizing to different lengths on tablet size screens. This issue has now been resolved by adjusting the title sizes.
+2. Made sure to redirect to the users profile after poem was successfully added. This issue has now been resolved.  
 
 
 ### **Code Validators:**

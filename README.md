@@ -34,13 +34,14 @@ The user types can be defined as one of the following:
 * Publishers.
 * Writers or bloggers of poetry. 
 
-These groups make up the target audience and each user type has a reason or need to visit the site.
 
-The site has been designed to meet those needs as well as the needs of the business.
+The site has been primarily designed to meet the needs of poets and poetry readers as they are the target audience. 
 
-Clear sections which relate specifically to all of the user types above are built into the website's design.
+However, publishers and poetry bloggers have been kept in mind and would also benefit from using the app.
 
-A mobile first approach was taken to create this project with consideration of ease of use and navigation to each of the features/sections. 
+Clear sections which relate specifically to all of the user stories below are built into the website's design.
+
+A mobile first approach was taken to create this project with consideration of ease of use and intuitive navigation to each of the features/sections. 
 
 ### **User Stories**
 
@@ -67,7 +68,7 @@ When designing the database for the app I stuck closely to the needs represented
 
 ![Users Collection](documentation/screenshots/users-coll.png)
 
-* Types Collection - Users need to be able to add certain types of poem. Research showed 13 popular types so I decided to build those into a form with a selection dropdown for the users to choose from when adding or editing poems. These types would also need to be managed by an admin user with CRUD functionality. This required the creation of 13 documents in the database represented by the diagram shown below.
+* Types Collection - Users need to be able to add certain types of poem. Research showed 13 popular types so I decided to build those into a form with a selection dropdown for the users to choose from when adding or editing poems. These types would also need to be managed by an admin user with CRUD functionality. This required the creation of 13 documents in the database each represented by the diagram shown below.
 
 ![Types Collection](documentation/screenshots/types-coll.png)
 
@@ -147,12 +148,6 @@ There are a number of carefully chosen features on the homepage:
 * If logged in, users may edit and delete poems they have submitted from both the home page and from their profile. 
 * Responsive footer featuring social media icon links and useful links to poetry orgs and websites.
 
-### **Login Page**
-* A simple login form which requires the user to enter their previously registered username and password.
-* Once registered and logged in, further nav links reveal to 'Add Poem', 'Profile' and 'Log Out'.
-* The login button on the form changes to outline the type in black on hover and makes use of material design waves effect when clicked.
-* There is a link to the register page if the user has yet to register.
-* A successful login displays the flash message "Welcome, username!" and redirects the user to their Profile page.
 
 ### **Register Page**
 * A simple form allowing the user to create a username and password.
@@ -160,6 +155,13 @@ There are a number of carefully chosen features on the homepage:
 * Register button with styling and effects consistent with the Log In form.
 * Link to Log In page if already registered.
 * Flash messages display appropriately based on user input such as "You have successfully registered!" or "That username is already in use, please choose another."
+
+### **Login Page**
+* A simple login form which requires the user to enter their previously registered username and password.
+* Once registered and logged in, further nav links reveal to 'Add Poem', 'Profile' and 'Log Out'.
+* The login button on the form changes to outline the type in black on hover and makes use of material design waves effect when clicked.
+* There is a link to the register page if the user has yet to register.
+* A successful login displays the flash message "Welcome, username!" and redirects the user to their Profile page.
 
 ### **Profile Page**
 * Once registered and logged in the user can visit their 'Profile' from the main navigation and view a list of their submitted poems by title and author.
@@ -216,7 +218,7 @@ When considering the trade off between importance and viability, the following f
 
 ## **Testing**
 
-Information regarding testing can be found in this separate [TESTING.md](https://github.com/JohnW876/TESTING.md) file.
+Information regarding testing can be found in this separate [TESTING.md](https://github.com/JohnW876/poetry_cloud/blob/master/TESTING.md) file.
 
 ---
 ## **Deployment**
