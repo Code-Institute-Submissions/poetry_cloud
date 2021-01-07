@@ -2,7 +2,7 @@
 {% block content %}
 
     <h4 class="center-align">Edit Poem</h4>
-
+<!-- Users may select from a dropdown menu of preset poem types and make amendments to an existing poem using this form-->
 <div class="row card-panel white">
     <form class="col s12" method="POST" action="{{ url_for('edit_poem', poem_id=poem._id) }}">
         <!-- select poem type dropdown -->

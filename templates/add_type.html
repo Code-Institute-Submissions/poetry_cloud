@@ -2,7 +2,7 @@
 {% block content %}
 
     <h4 class="center-align">Add Type</h4>
-
+    <!-- Admin users only may add a poem type using this form-->
     <div class="row card-panel white">
         <form class="col s12" method="POST" action="{{ url_for('add_type') }}">
             <!-- type name -->

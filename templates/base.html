@@ -14,7 +14,10 @@
 <body>
 
     <header>
-     <!-- top navbar-->
+     <!--  Base template which makes use of Jinja templating to extend and control functionality to other templates.
+            Here it is used to show unregistered users limited nav links of 'Home, 'Login' and 'Register'
+            Then registered users who are logged in will see further nav links of 'Profile', 'Add Poem' and 'Log Out'
+            Only an admin user, once logged in , will see the 'Manage Types' nav link. -->
          <nav class="white">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_poems') }}" class="brand-logo black-text"><i class="fas fa-cloud-sun red-text text-darken-1 hide-on-small-only"></i>Poetry Cloud</a>
@@ -35,7 +38,7 @@
                 </ul>
             </div>
         </nav>
-    <!-- mobile sidenav-->
+    <!-- mobile sidenav popout-->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align red-text text-darken-1">Poetry Cloud</h4></li>
             <li><a href="{{ url_for('get_poems') }}">Home</a></li>
@@ -54,7 +57,7 @@
     </header>
 
     <section>
-        <!-- flash messages -->
+        <!-- flash messages to display when user performs key actions -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -70,7 +73,7 @@
         {% block content %}
         {% endblock %}
     </main>
-    <!-- footer -->
+    <!-- footer with social icons and poetry links-->
      <footer class="page-footer red darken-1">
           <div class="container">
             <div class="row">

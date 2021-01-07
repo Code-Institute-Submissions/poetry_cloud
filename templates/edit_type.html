@@ -2,7 +2,7 @@
 {% block content %}
 
     <h4 class="center-align">Edit Type</h4>
-
+    <!-- Admin users only may edit a poem type using this form-->
     <div class="row card-panel white">
         <form class="col s12" method="POST" action="{{ url_for('edit_type', type_id=type._id) }}">
             <!-- type name -->
