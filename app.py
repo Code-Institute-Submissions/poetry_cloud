@@ -124,6 +124,10 @@ def logout():
 @app.route("/add_poem", methods=["GET", "POST"])
 def add_poem():
     if request.method == "POST":
+        # Using the data inputted by the user into the add poem form,
+        # insert into the database in the poems collection and flash
+        # success message to the user.
+        # Then redirect user back to their profile page.
         poem = {
             "type_name": request.form.get("type_name"),
             "poem_title": request.form.get("poem_title"),
