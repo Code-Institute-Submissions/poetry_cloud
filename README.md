@@ -58,7 +58,7 @@ A mobile first approach was taken to create this project with consideration of e
 
 
 Further information and screenshots showing how this project meets the user's needs can be
-found in the separate [TESTING.md](https://github.com/JohnW876/TESTING.md) file.
+found in the separate [TESTING.md](https://github.com/JohnW876/poetry_cloud/blob/master/TESTING.md) file.
 
 ### **Data design**
 
@@ -223,9 +223,9 @@ Information regarding testing can be found in this separate [TESTING.md](https:/
 ---
 ## **Deployment**
 
-This project was developed with the Gitpod IDE and then pushed to a GitHub repository. The app is deployed via Heroku.
+Poetry Cloud was developed with the Gitpod IDE and then pushed to a GitHub repository. The app is deployed via Heroku.
 
-To deploy the app:
+To deploy the app locally starting from GitHub:
 
 **Git Clone**
 
@@ -250,7 +250,7 @@ To deploy the app:
 10. Ensure that you populate this with your "Secret Key", "Your Mongo URI" and "Your MongoDB Name"
 11. Finally, make sure to add env.py to your .gitignore file.
 
-**To Deploy To Heroku**
+**To Deploy Using Heroku**
 
 1. Type the folowing command in the terminal - **pip freeze > requirements.txt**
 2. This creates a requirements.txt file
