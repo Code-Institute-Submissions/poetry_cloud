@@ -65,6 +65,7 @@ found in the separate [TESTING.md](https://github.com/JohnW876/poetry_cloud/blob
 When designing the database for the app I stuck closely to the needs represented in the user stories. These user stories guided the creation of three separate collections of users, types and poems. The collections are shown here below in their field and value pairs. The data records are stored in MongoDB as BSON documents with unique id numbers.
 
 * Users Collection - In order for users to manage a store of their own uploaded poems it was obvious that authentication and a personal profile would be a key feature of the app so therefore a user collection would be required to store the usernames and passwords of registered users.
+* Admin user - I built an admin user into the app so that only they could control the poem types outlined below. 
 
 ![Users Collection](documentation/screenshots/users-coll.png)
 
