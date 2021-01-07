@@ -133,7 +133,7 @@ def add_poem():
         }
         mongo.db.poems.insert_one(poem)
         flash("Poem Successfully Added")
-        return redirect(url_for("get_poems"))
+        return redirect(url_for('profile', username=session['user']))
 
     types = mongo.db.types.find().sort("type_name", 1)
     return render_template("add_poem.html", types=types)
